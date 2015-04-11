@@ -23,11 +23,15 @@ defmodule Clint do
         IO.puts "Running on http://localhost:#{port}"
       end
 
+      @doc """
+      Can be overridden in the App module to allow the developer to show their
+      own custom error page
+      """
       defp handle_errors(conn, %{kind: _, reason: _, stack: _}) do
         send_resp(conn, conn.status, "Something went wrong!")
       end
 
-      defoverridable [handle_errors: 2]
+      defoverridable handle_errors: 2
     end
   end
 end
