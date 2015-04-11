@@ -6,15 +6,24 @@ defmodule Clint.Mixfile do
       app: :clint,
       version: "0.0.1",
       elixir: "~> 1.0",
-      deps: deps
+      deps: deps,
+      name: "Clint",
+      source_url: "https://github.com/lpil/clint",
+      description: "An Elixir web micro-framework, inspired by Sinatra",
+      package: [
+        contributors: ["Louis Pilfold"],
+        licenses: ["MIT"],
+        links: %{ "GitHub" => "https://github.com/lpil/clint" },
+        files: ~w(mix.exs lib README.md LICENCE)
+      ]
     ]
   end
 
   def application do
     [
       applications: [
-        # :cowboy,
-        # :plug,
+        :cowboy,
+        :plug,
         :logger,
       ],
     ]
