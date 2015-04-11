@@ -2,16 +2,6 @@ defmodule Clint.Render do
 
   import Plug.Conn
 
-  defmacro __using__(_) do
-    quote do
-      import Clint.Render, only: [
-        text: 2,
-        html: 2,
-        eex:  3,
-      ]
-    end
-  end
-
   def text(conn, body) do
     status = conn.status || 200
     conn

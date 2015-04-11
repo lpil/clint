@@ -3,10 +3,11 @@ defmodule Clint do
   defmacro __using__(_) do
     quote do
       use Clint.Util
-      use Clint.Render
 
       use Plug.Router
       use Plug.ErrorHandler
+
+      import Clint.Render
 
       if Mix.env == :dev do
         use Plug.Debugger
