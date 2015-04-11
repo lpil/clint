@@ -7,6 +7,11 @@ defmodule Clint do
       plug :match
       plug :dispatch
 
+
+      if Mix.env == :dev do
+        plug Clint.Logger
+      end
+
       def start do
         port = System.get_env("PORT") || 4000
         {:ok, _} = Plug.Adapters.Cowboy.http(__MODULE__, [], port: port)
