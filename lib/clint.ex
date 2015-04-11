@@ -3,10 +3,14 @@ defmodule Clint do
   defmacro __using__(_) do
     quote do
       use Plug.Router
+      use Plug.ErrorHandler
+
+      if Mix.env == :dev do
+        use Plug.Debugger
+      end
 
       plug :match
       plug :dispatch
-
 
       if Mix.env == :dev do
         plug Clint.Logger
@@ -18,6 +22,12 @@ defmodule Clint do
         IO.puts "== The man with no name lights his cigar..."
         IO.puts "Running on http://localhost:#{port}"
       end
+
+      defp handle_errors(conn, %{kind: _, reason: _, stack: _}) do
+        send_resp(conn, conn.status, "Something went wrong!")
+      end
+
+      defoverridable [handle_errors: 2]
     end
   end
 end
