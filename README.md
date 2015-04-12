@@ -19,7 +19,7 @@ defmodule App do
 end
 ```
 ```
-mix run -e App.start --no-halt
+mix run -e App.start
 ```
 
 ## LICENCE

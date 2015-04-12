@@ -7,6 +7,7 @@ defmodule Clint.Util do
 
         IO.puts "== The man with no name lights his cigar...\n" <>
                 "Running on http://localhost:#{port}"
+        no_halt
       end
 
       defp iex_running? do
