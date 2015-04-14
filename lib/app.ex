@@ -17,4 +17,4 @@ defmodule App do
   end
 end
 
-# min run -e App.start
+# mix run -e App.start
