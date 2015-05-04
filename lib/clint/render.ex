@@ -11,7 +11,6 @@ defmodule Clint.Render do
 
   def html(conn, body) do
     status = conn.status || 200
-    IO.puts 1
     conn
     |> put_resp_content_type("text/html")
     |> render(body)
