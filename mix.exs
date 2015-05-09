@@ -33,7 +33,9 @@ defmodule Clint.Mixfile do
     [
       {:cowboy, "~>1.0.0"},
       {:plug, "~>0.11.0"},
-      # {:shouldi, "~> 0.2.2", only: :test},
+      {:shouldi, "~> 0.2.2", only: :test},
     ]
   end
+
+  Application.put_env Clint, :templates_dir, "templates/"
 end

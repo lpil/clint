@@ -3,27 +3,25 @@ defmodule Clint.Render do
   import Plug.Conn
 
   def text(conn, body) do
-    status = conn.status || 200
     conn
     |> put_resp_content_type("text/plain")
-    |> send_resp(status, body)
+    |> resp(body)
   end
 
   def html(conn, body) do
-    status = conn.status || 200
     conn
     |> put_resp_content_type("text/html")
-    |> render(body)
+    |> resp(body)
   end
 
-  def eex(conn, template, options \\ []) do
-    body = EEx.eval_string(template, options)
+  def template(conn, template, options \\ []) do
+    body = Clint.Template.render(template, options)
     conn
     |> html(body)
   end
 
 
-  defp render(conn, body) do
+  defp resp(conn, body) do
     status = conn.status || 200
     conn
     |> send_resp(status, body)

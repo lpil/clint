@@ -13,7 +13,7 @@ defmodule App do
 
   get "/foo/:name" do
     conn
-    |> eex "<h2>Hello <%= name %>!</h2>", name: name
+    |> template :hello, name: name
   end
 end
 
