@@ -1,6 +1,10 @@
 Clint
 =====
 
+[![Build Status](https://travis-ci.org/lpil/clint.svg?branch=master)](https://travis-ci.org/lpil/clint)
+[![Hex version](https://img.shields.io/hexpm/v/clint.svg "Hex version")](https://hex.pm/packages/clint)
+[![Hex downloads](https://img.shields.io/hexpm/dt/clint.svg "Hex downloads")](https://hex.pm/packages/clint)
+
 Clint is an Elixir web micro-framework, inspired by
 [Sinatra](http://github.com/sinatra/sinatra), and built on top of
 [Plug](http://github.com/elixir-lang/plug) and
