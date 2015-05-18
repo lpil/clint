@@ -27,7 +27,6 @@ mix run -e App.start
 #### Reloading the app on changes
 
 This'll happen, as soon as I work out how Elixir/Erlang code reloading works.
-For now, consider using alexch's [rerun](https://github.com/alexch/rerun).
 
 ## LICENCE
 
