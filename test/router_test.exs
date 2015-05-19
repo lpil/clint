@@ -28,7 +28,7 @@ defmodule RouterTest do
     assert conn.resp_body == "patched"
   end
 
-  should "posted" do
+  should "post" do
     conn = conn( :post, "/" ) |> App.call(@opts)
     assert conn.resp_body == "posted"
   end
