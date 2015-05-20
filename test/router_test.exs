@@ -1,8 +1,6 @@
 defmodule RouterTest do
   use Clint.TestCase
 
-  @opts App.init([])
-
   defmodule App do
     use Clint
     get     "/", do: conn |> text "got"
@@ -12,6 +10,9 @@ defmodule RouterTest do
     delete  "/", do: conn |> text "deleted"
     options "/", do: conn |> text "optioned"
   end
+
+  @opts App.init([])
+
 
   should "get" do
     conn = conn( :get, "/" ) |> App.call(@opts)
