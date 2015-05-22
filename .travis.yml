@@ -1,23 +1,17 @@
-language: erlang
+language: elixir
+
+elixir:
+  - 1.0.0
+  - 1.0.1
+  - 1.0.2
+  - 1.0.3
 
 otp_release:
   - 17.4
   - 17.3
   - 17.0
 
-before_install:
-  - git clone https://github.com/elixir-lang/elixir
-  - cd elixir
-  - git checkout v1.0.4
-  - cd ..
-  - make -C elixir
-  - yes | MIX_ENV=test mix deps.get
-  - MIX_ENV=test mix compile
-
-before_script: export PATH=`pwd`/elixir/bin:$PATH
-
-script:
-  - MIX_ENV=test mix test
+env: MIX_ENV=test
 
 notifications:
   email: false
