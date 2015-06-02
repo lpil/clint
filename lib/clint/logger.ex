@@ -1,5 +1,4 @@
 defmodule Clint.Logger do
-  import Plug.Conn
 
   def init(options) do
     options
