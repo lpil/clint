@@ -5,6 +5,7 @@ defmodule Clint.Template do
   eexs = Path.wildcard("#{templates_dir}/*.eex")
 
   for eex <- eexs do
+    @external_resource eex
     name = eex |> Path.basename(".eex") |> String.to_atom
     EEx.function_from_file( :defp, name, eex, [:assigns] )
     def render(unquote(name), assigns) do
