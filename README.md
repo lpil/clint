@@ -10,7 +10,8 @@ Clint is an Elixir web micro-framework, inspired by
 [Plug](http://github.com/elixir-lang/plug) and
 [Cowboy](http://github.com/ninenines/cowboy).
 
-Or at least that's the idea. We're not there yet.
+Or at least that's the idea. We're not there yet. You probably should try using
+this.
 
 ```elixir
 defmodule App do
